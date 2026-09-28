@@ -8,6 +8,7 @@
   <title>Demographic Toolkit</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -20,92 +21,95 @@
       line-height: 1.5;
     }
 
-    /* ========================================
+    /* =========================================================
        HERO
-       ======================================== */
+       ========================================================= */
 
     .hero {
       background: #24577d;
       color: white;
       text-align: center;
-      padding: 80px 30px 75px;
+      padding: 65px 30px 60px;
     }
 
-    .label {
-      font-size: 16px;
+    .hero-label {
+      font-size: 15px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 24px;
-      opacity: 0.9;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      max-width: 950px;
-      margin: 0 auto 18px;
-      font-size: 58px;
+      margin: 0;
+      font-size: 52px;
       line-height: 1.08;
       font-weight: 700;
     }
 
-    .hero-subtitle {
-      max-width: 850px;
-      margin: 0 auto;
-      font-size: 34px;
+    .hero-divider {
+      width: 60px;
+      height: 2px;
+      background: rgba(255,255,255,0.6);
+      margin: 30px auto;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: 30px;
       line-height: 1.25;
       font-weight: 600;
     }
 
-    .divider {
-      width: 65px;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.6);
-      margin: 38px auto;
-    }
-
     .author {
-      font-size: 23px;
-      font-weight: 600;
       margin-top: 10px;
+      font-size: 21px;
+      font-weight: 600;
     }
 
-    /* ========================================
+    /* =========================================================
        MAIN CONTENT
-       ======================================== */
+       ========================================================= */
 
     .content {
-      max-width: 1000px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 60px 35px 75px;
+      padding: 48px 28px 65px;
       text-align: center;
     }
 
     .introduction {
-      max-width: 850px;
-      margin: 0 auto 45px;
-      font-size: 22px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      font-size: 20px;
       line-height: 1.55;
       color: #444;
     }
 
-    /* ========================================
-       RESOURCE CARDS
-       ======================================== */
+    /* =========================================================
+       THREE-CARD GRID
+       ========================================================= */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
 
     .resource {
       background: white;
       border: 1px solid #d5d5d5;
-      border-radius: 6px;
-      padding: 45px 45px 42px;
-      margin-bottom: 35px;
-      text-align: center;
-    }
-
-    .resource.prototype {
       border-top: 5px solid #24577d;
+      border-radius: 6px;
+      padding: 34px 25px 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .resource-label {
-      font-size: 16px;
+      font-size: 14px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: #666;
@@ -114,43 +118,67 @@
 
     .resource h2 {
       color: #24577d;
-      font-size: 36px;
+      font-size: 29px;
       line-height: 1.2;
       margin: 0 0 14px;
       font-weight: 700;
     }
 
     .resource h3 {
-      font-size: 23px;
-      line-height: 1.35;
-      margin: 0 auto 22px;
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 0 auto 20px;
       font-weight: 400;
       color: #444;
-      max-width: 780px;
     }
 
     .resource p {
-      max-width: 800px;
-      margin: 0 auto 28px;
-      font-size: 19px;
-      line-height: 1.55;
+      font-size: 18px;
+      line-height: 1.5;
       color: #555;
+      margin: 0 auto 25px;
     }
+
+    .card-content {
+      flex-grow: 1;
+    }
+
+    /* =========================================================
+       SMALL STATUS LABEL
+       ========================================================= */
 
     .status {
       display: inline-block;
-      border: 1px solid #9eb8cc;
-      border-radius: 30px;
-      padding: 7px 18px;
-      margin-bottom: 27px;
+      border: 1px solid #aebfcd;
+      border-radius: 22px;
+      padding: 7px 16px;
+      margin: 0 0 20px;
       color: #24577d;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
+      background: #fff;
     }
 
-    /* ========================================
+    /* =========================================================
+       DEVELOPMENT TIMELINE
+       ========================================================= */
+
+    .timeframes {
+      margin: 20px auto 25px;
+      padding: 16px 8px;
+      border-top: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    .timeframes p {
+      margin: 5px 0;
+      font-size: 17px;
+      color: #444;
+    }
+
+    /* =========================================================
        BUTTONS
-       ======================================== */
+       ========================================================= */
 
     .button {
       display: inline-block;
@@ -158,12 +186,13 @@
       color: white;
       text-decoration: none;
       font-family: "Times New Roman", Times, serif;
-      font-size: 21px;
+      font-size: 18px;
       font-weight: 700;
-      padding: 16px 30px;
+      padding: 14px 23px;
       border: 2px solid #24577d;
       border-radius: 5px;
       transition: 0.2s ease;
+      margin-top: auto;
     }
 
     .button:hover {
@@ -171,127 +200,115 @@
       border-color: #1b4463;
     }
 
-    .button-secondary {
-      background: white;
-      color: #24577d;
-    }
-
-    .button-secondary:hover {
-      background: #f1f4f6;
-      color: #1b4463;
-      border-color: #1b4463;
-    }
-
     .note {
-      margin-top: 18px !important;
+      margin-top: 14px !important;
       margin-bottom: 0 !important;
-      font-size: 16px !important;
+      font-size: 15px !important;
       color: #777 !important;
     }
 
-    /* ========================================
-       DEVELOPMENT TIMELINE
-       ======================================== */
-
-    .timeframes {
-      max-width: 700px;
-      margin: 25px auto 30px;
-      padding: 20px 20px;
-      border-top: 1px solid #cccccc;
-      border-bottom: 1px solid #cccccc;
-    }
-
-    .timeframes p {
-      margin: 6px 0;
-      font-size: 20px;
-      color: #444;
-    }
-
-    /* ========================================
+    /* =========================================================
        FOOTER
-       ======================================== */
+       ========================================================= */
 
     footer {
       border-top: 1px solid #d5d5d5;
-      padding: 27px 20px 35px;
+      padding: 28px 20px 34px;
       text-align: center;
       font-size: 16px;
       color: #777;
     }
 
-    /* ========================================
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 1050px) {
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .resource {
+        padding: 35px 30px;
+      }
+
+    }
+
+    /* =========================================================
        MOBILE
-       ======================================== */
+       ========================================================= */
 
     @media (max-width: 700px) {
 
       .hero {
-        padding: 55px 22px 50px;
+        padding: 50px 22px 46px;
       }
 
-      .label {
+      .hero-label {
         font-size: 13px;
         letter-spacing: 3px;
       }
 
       .hero h1 {
-        font-size: 43px;
+        font-size: 42px;
       }
 
-      .hero-subtitle {
-        font-size: 22px;
+      .hero h2 {
+        font-size: 23px;
       }
 
       .author {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       .content {
-        padding: 42px 18px 55px;
+        padding: 38px 18px 50px;
       }
 
       .introduction {
-        font-size: 19px;
-        margin-bottom: 38px;
+        font-size: 18px;
+        margin-bottom: 32px;
       }
 
       .resource {
-        padding: 35px 22px;
+        padding: 30px 20px;
       }
 
       .resource h2 {
-        font-size: 30px;
+        font-size: 27px;
       }
 
       .resource h3 {
-        font-size: 21px;
+        font-size: 18px;
       }
 
       .resource p {
-        font-size: 18px;
+        font-size: 17px;
       }
 
       .button {
-        font-size: 19px;
-        padding: 14px 22px;
+        font-size: 17px;
+        padding: 13px 19px;
       }
 
-      .timeframes p {
-        font-size: 18px;
-      }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ========================================
+  <!-- =======================================================
        HERO
-       ======================================== -->
+       ======================================================= -->
 
   <header class="hero">
 
-    <div class="label">
+    <div class="hero-label">
       Demographic Toolkit
     </div>
 
@@ -299,11 +316,11 @@
       Demographic Toolkit
     </h1>
 
-    <div class="divider"></div>
+    <div class="hero-divider"></div>
 
-    <div class="hero-subtitle">
+    <h2>
       Development Framework and Working Prototype
-    </div>
+    </h2>
 
     <div class="author">
       Brendan Mullan, Ph.D.
@@ -312,9 +329,9 @@
   </header>
 
 
-  <!-- ========================================
+  <!-- =======================================================
        MAIN CONTENT
-       ======================================== -->
+       ======================================================= -->
 
   <main class="content">
 
@@ -322,123 +339,180 @@
       The Demographic Toolkit is being developed as a systematic,
       accessible platform for demographic data, indicators, analysis,
       visualization, and geographic comparison. The materials below
-      present the current development framework and the functioning
-      EL613 beta prototype.
+      present the current development framework, the functioning EL613
+      beta prototype, and an example of detailed local demographic analysis.
     </p>
 
 
-    <!-- ========================================
-         DEVELOPMENT OVERVIEW
-         ======================================== -->
+    <div class="card-grid">
 
-    <section class="resource">
 
-      <div class="resource-label">
-        Development Framework
-      </div>
+      <!-- ===================================================
+           CARD 1 — DEVELOPMENT FRAMEWORK
+           =================================================== -->
 
-      <h2>
-        Demographic Toolkit Development Overview
-      </h2>
+      <section class="resource">
 
-      <h3>
-        What Exists Today · What Can Exist in 9 Months ·
-        What Can Exist in 18 Months
-      </h3>
+        <div class="card-content">
 
-      <div class="timeframes">
+          <div class="resource-label">
+            Development Framework
+          </div>
 
-        <p>
-          <strong>Today:</strong>
-          What already exists
+          <h2>
+            Demographic Toolkit Development Overview
+          </h2>
+
+          <h3>
+            What Exists Today · What Can Exist in 9 Months ·
+            What Can Exist in 18 Months
+          </h3>
+
+          <div class="timeframes">
+
+            <p>
+              <strong>Today:</strong> What already exists
+            </p>
+
+            <p>
+              <strong>9 Months:</strong> What can be developed
+            </p>
+
+            <p>
+              <strong>18 Months:</strong> What the Toolkit can become
+            </p>
+
+          </div>
+
+          <p>
+            A concise overview of the current Demographic Toolkit,
+            the capabilities already demonstrated by the EL613 prototype,
+            and a framework for further development over the next
+            9 and 18 months.
+          </p>
+
+        </div>
+
+        <a
+          class="button"
+          href="Demographic_Toolkit_Development_Overview.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Development Overview
+        </a>
+
+        <p class="note">
+          Opens the PDF in a new browser tab.
         </p>
 
-        <p>
-          <strong>9 Months:</strong>
-          What can be developed
+      </section>
+
+
+      <!-- ===================================================
+           CARD 2 — WORKING PROTOTYPE
+           =================================================== -->
+
+      <section class="resource">
+
+        <div class="card-content">
+
+          <div class="resource-label">
+            Working Prototype
+          </div>
+
+          <h2>
+            EL613 Demographic Toolkit Beta Prototype
+          </h2>
+
+          <div class="status">
+            Current Beta Prototype
+          </div>
+
+          <p>
+            EL613 is the current functioning beta prototype of the
+            Demographic Toolkit. It demonstrates the demographic data,
+            indicators, analytical organization, visualization, and
+            regional demographic capabilities already developed for
+            Magnesia and the Sporades.
+          </p>
+
+        </div>
+
+        <a
+          class="button"
+          href="https://bpmullan.github.io/EL613Dashboard061226/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open EL613 Beta Prototype
+        </a>
+
+        <p class="note">
+          Opens the current EL613 prototype in a new browser tab.
         </p>
 
-        <p>
-          <strong>18 Months:</strong>
-          What the Toolkit can become
+      </section>
+
+
+      <!-- ===================================================
+           CARD 3 — APPLICATION EXAMPLE
+           =================================================== -->
+
+      <section class="resource">
+
+        <div class="card-content">
+
+          <div class="resource-label">
+            Application Example
+          </div>
+
+          <h2>
+            The Demography of Pelion
+          </h2>
+
+          <div class="status">
+            Regional Demographic Analysis
+          </div>
+
+          <p>
+            A detailed demographic analysis of 19 settlements in Pelion,
+            examining long-term population change from 1961–2021 and
+            illustrating geographically detailed demographic analysis
+            at the local level.
+          </p>
+
+        </div>
+
+        <a
+          class="button"
+          href="https://bpmullan.github.io/Pelion-Demography/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Pelion Demographic Analysis
+        </a>
+
+        <p class="note">
+          Opens the Pelion demographic analysis in a new browser tab.
         </p>
 
-      </div>
-
-      <p>
-        A concise overview of the current Demographic Toolkit,
-        the capabilities already demonstrated by the EL613 prototype,
-        and a framework for further development over the next
-        9 and 18 months.
-      </p>
-
-      <a
-        class="button button-secondary"
-        href="Demographic_Toolkit_Development_Overview.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View Development Overview
-      </a>
-
-      <p class="note">
-        PDF document — opens in a new browser tab.
-      </p>
-
-    </section>
+      </section>
 
 
-    <!-- ========================================
-         EL613 PROTOTYPE
-         ======================================== -->
-
-    <section class="resource prototype">
-
-      <div class="resource-label">
-        Working Prototype
-      </div>
-
-      <h2>
-        EL613 Demographic Toolkit Beta Prototype
-      </h2>
-
-      <div class="status">
-        Current Beta Prototype
-      </div>
-
-      <p>
-        EL613 is the current functioning beta prototype of the
-        Demographic Toolkit. It demonstrates the demographic data,
-        indicators, analytical organization, visualization, and
-        regional demographic capabilities already developed for
-        Magnesia and the Sporades.
-      </p>
-
-      <a
-        class="button"
-        href="https://bpmullan.github.io/EL613Dashboard061226/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Open EL613 Beta Prototype
-      </a>
-
-      <p class="note">
-        Opens the current EL613 prototype in a new browser tab.
-      </p>
-
-    </section>
+    </div>
 
   </main>
 
 
-  <!-- ========================================
+  <!-- =======================================================
        FOOTER
-       ======================================== -->
+       ======================================================= -->
 
   <footer>
     Demographic Toolkit &nbsp;|&nbsp; Brendan Mullan, Ph.D.
   </footer>
+
 
 </body>
 </html>
