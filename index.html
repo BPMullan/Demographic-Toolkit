@@ -210,6 +210,20 @@
       border-color: #1b4463;
     }
 
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .button-group .button {
+      margin-top: 0;
+      padding: 11px 13px;
+      font-size: 15px;
+    }
+
     .note {
       margin-top: 12px !important;
       margin-bottom: 0 !important;
@@ -293,6 +307,16 @@
         padding: 13px 19px;
       }
 
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button-group .button {
+        font-size: 16px;
+        padding: 11px 17px;
+      }
+
     }
 
   </style>
@@ -337,7 +361,7 @@
 
     <p class="introduction">
       The Demographic Toolkit is being developed as a systematic,
-      accessible national demographic intelligence infrastructue integrating 
+      accessible national demographic intelligence infrastructure integrating 
       key demographic indicators, analysis, visualization, and geographic comparison. 
       The materials below present the current development framework, the functioning EL613
       beta prototype, and an example of detailed local demographic analysis.
@@ -393,17 +417,30 @@
 
         </div>
 
-        <a
-          class="button"
-          href="Demographic_Toolkit_Development_Overview.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Development Overview
-        </a>
+        <div class="button-group">
+
+          <a
+            class="button"
+            href="Demographic_Toolkit_Development_Overview.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Development Overview
+          </a>
+
+          <a
+            class="button"
+            href="SNF_Budget_Original.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Budget Submission
+          </a>
+
+        </div>
 
         <p class="note">
-          Opens the PDF in a new browser tab.
+          Opens the selected document in a new browser tab.
         </p>
 
       </section>
